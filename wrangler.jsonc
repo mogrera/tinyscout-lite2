@@ -1,0 +1,32 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "tinyscout-lite2",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-06-10",
+  "workers_dev": true,
+  "preview_urls": false,
+  "vars": {
+    "MAX_ENTRIES": "2000",
+    "READ_PUBLIC": "true",
+    "HEALTH_REFRESH_SECONDS": "30"
+  },
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "ENTRIES_DO",
+        "class_name": "EntriesDurableObject"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": [
+        "EntriesDurableObject"
+      ]
+    }
+  ],
+  "observability": {
+    "enabled": true
+  }
+}

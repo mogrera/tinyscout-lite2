@@ -1,0 +1,24 @@
+{
+  "name": "tinyscout-lite2",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Minimal Nightscout-compatible recovery server for CGM readings on Cloudflare Workers.",
+  "type": "module",
+  "scripts": {
+    "cf:login": "wrangler login",
+    "cf:whoami": "wrangler whoami",
+    "cf:deploy:dry": "wrangler deploy --dry-run",
+    "cf:secret:api": "wrangler secret put API_SECRET",
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "devDependencies": {
+    "@cloudflare/vitest-pool-workers": "latest",
+    "@cloudflare/workers-types": "latest",
+    "typescript": "latest",
+    "vitest": "latest",
+    "wrangler": "latest"
+  }
+}
